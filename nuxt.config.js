@@ -19,14 +19,35 @@ export default {
 
   css: [],
 
-  plugins: [],
+  plugins: [
+  ],
 
   components: true,
 
-  buildModules: [],
+  buildModules: [
+    '@nuxtjs/vuetify',
+  ],
+  vuetify: {
+    // Vuetify options
+    theme: {
+      dark: true,
+      themes: {
+        dark: {
+          primary: '#FFA500',
+          secondary: '#424242',
+          accent: '#FFC107',
+          error: '#FF5252',
+          info: '#2196F3',
+          success: '#4CAF50',
+          warning: '#FFC107'
+        }
+      }
+    }  
+  },
 
   modules: [
     '@nuxtjs/axios',
+    '@nuxtjs/vuetify'
   ],
 
   axios: {

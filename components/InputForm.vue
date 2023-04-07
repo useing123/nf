@@ -1,20 +1,30 @@
 <template>
-  <div>
-    <label for="city">City:</label>
-    <input type="text" v-model="city" id="city">
-    <label for="work">Profession:</label>
-    <input type="text" v-model="work" id="work">
-    <label for="years_of_experience">Years of experience:</label>
-    <input type="number" v-model="years_of_experience" id="years_of_experience">
-    <button @click="getHourlyRate">Get hourly rate</button>
-    <div v-if="result">
-      <p>The hourly rate for your work in {{ city }} is:</p>
-      <pre>{{ result }}</pre>
-    </div>
-  </div>
+  <v-container>
+    <v-form>
+      <v-text-field v-model="city" label="City" required></v-text-field>
+      <v-text-field v-model="work" label="Profession" required></v-text-field>
+      <v-text-field v-model="years_of_experience" label="Years of experience" required></v-text-field>
+      <v-btn @click="getHourlyRate">Get hourly rate</v-btn>
+      <v-card v-if="result">
+        <v-card-title>The hourly rate for your work in {{ city }} is:</v-card-title>
+        <v-card-text>{{ result }}</v-card-text>
+      </v-card>
+    </v-form>
+  </v-container>
 </template>
 <script>
+import { VBtn, VCard, VCardTitle, VCardText, VContainer, VForm, VTextField } from 'vuetify/lib'
+
 export default {
+  components: {
+    VBtn,
+    VCard,
+    VCardTitle,
+    VCardText,
+    VContainer,
+    VForm,
+    VTextField,
+  },
   data() {
     return {
       city: '',
