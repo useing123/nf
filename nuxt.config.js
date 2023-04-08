@@ -56,7 +56,7 @@ export default {
 
   proxy: {
     '/api/': {
-      target: 'http://127.0.0.1:5000/get_answer',
+      target: 'https://userwiner.pythonanywhere.com/get_answer',
       pathRewrite: { '^/api/': '' },
     },
   },
