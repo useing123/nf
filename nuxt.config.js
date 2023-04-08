@@ -56,7 +56,7 @@ export default {
 
   proxy: {
     '/api/': {
-      target: 'https://userwiner.pythonanywhere.com/get_answer',
+      target: 'https://userwiner.pythonanywhere.com/api',
       pathRewrite: { '^/api/': '' },
     },
   },
